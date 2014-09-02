@@ -6,6 +6,7 @@ import org.nlogo.api.ExtensionManager;
 import org.nlogo.api.PrimitiveManager;
 
 import udp.prims.CreateLocalSocket;
+import udp.prims.CreateSocket;
 import udp.prims.GetGeoGebraPort;
 import udp.prims.SendData;
 import udp.sock.Socket;
@@ -18,6 +19,7 @@ public class UdpExtension extends DefaultClassManager {
 	@Override
 	public void load(PrimitiveManager pm) throws ExtensionException {
 		pm.addPrimitive("create-local-socket", new CreateLocalSocket() );
+		pm.addPrimitive("create-socket", new CreateSocket() );
 		pm.addPrimitive("send", new SendData() );
 		pm.addPrimitive("geogebra-port", new GetGeoGebraPort() );
 	}
